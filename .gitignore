@@ -17,3 +17,6 @@ node_modules
 package-lock.json
 
 *.pyc
+
+exercises/kotlin/.gradle
+exercises/kotlin/build/
