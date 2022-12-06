@@ -3,12 +3,12 @@ repositories {
 }
 
 apply plugin: 'java'
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+sourceCompatibility = JavaVersion.VERSION_17
+targetCompatibility = JavaVersion.VERSION_17
 apply plugin: 'idea'
 
 dependencies {
     implementation 'commons-codec:commons-codec:1.15'
     testImplementation 'junit:junit:4.11'
     testImplementation 'org.assertj:assertj-core:3.9.1'
-}
+} 
