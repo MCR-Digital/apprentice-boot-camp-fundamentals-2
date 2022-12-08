@@ -1,4 +1,4 @@
-package checkout
+package bowling
 
 import org.junit.jupiter.api.Test
 
