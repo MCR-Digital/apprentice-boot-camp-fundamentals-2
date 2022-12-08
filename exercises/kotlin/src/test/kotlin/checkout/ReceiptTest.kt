@@ -43,5 +43,6 @@ internal class ReceiptTest {
         assertTrue(checkout.receipt().contains("D: 15\n"))
         checkout.scan("B")
         assertTrue(checkout.receipt().contains("B: 30 - 15 (2 for 45)\n"))
+        assertTrue(checkout.receipt().contains("Total: 210"))
     }
 }

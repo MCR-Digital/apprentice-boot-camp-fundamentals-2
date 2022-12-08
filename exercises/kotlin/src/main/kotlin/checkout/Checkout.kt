@@ -8,9 +8,15 @@ internal class Checkout {
     fun scan(sku: String) {
         if ("A" == sku) {
             total += 50
+            if (++numberOfA % 3 == 0) {
+                total -= 20
+            }
             receipt.scannedA()
         } else if ("B" == sku) {
             total += 30
+            if (++numberOfB % 2 == 0) {
+                total -= 15
+            }
             receipt.scannedB()
         } else if ("C" == sku) {
             total += 20
@@ -18,17 +24,6 @@ internal class Checkout {
         } else if ("D" == sku) {
             total += 15
             receipt.scannedD()
-        }
-        if ("A" == sku) {
-            numberOfA++
-            if (numberOfA % 3 == 0) {
-                total -= 20
-            }
-        } else if ("B" == sku) {
-            numberOfB++
-            if (numberOfB % 2 == 0) {
-                total -= 15
-            }
         }
     }
 

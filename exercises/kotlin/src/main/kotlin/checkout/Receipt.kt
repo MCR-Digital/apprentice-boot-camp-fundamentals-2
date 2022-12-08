@@ -2,16 +2,16 @@ package checkout
 
 class Receipt {
     private var text = ""
-    private var aCountdown = 3
+    private var numberOfA = 0
     private var total = 0
-    private var bCountdown = 2
+    private var numberOfB = 0
     fun text(): String {
         return text + "Total: " + total
     }
 
     fun scannedA() {
         text += "A: 50"
-        if (--aCountdown == 0) {
+        if (++numberOfA % 3 == 0) {
             text += " - 20 (3 for 130)"
             total += 30
         } else {
@@ -22,7 +22,7 @@ class Receipt {
 
     fun scannedB() {
         text += "B: 30"
-        if (--bCountdown == 0) {
+        if (++numberOfB % 2 == 0) {
             text += " - 15 (2 for 45)"
             total += 15
         } else {

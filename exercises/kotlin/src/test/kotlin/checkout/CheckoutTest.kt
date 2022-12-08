@@ -78,4 +78,33 @@ internal class CheckoutTest {
         checkout.scan("D")
         assertEquals(checkout.total(), 115)
     }
+
+    @Test
+    fun incremental() {
+        val checkout = Checkout()
+        checkout.scan("A")
+        assertEquals(checkout.total(),50)
+        checkout.scan("B")
+        assertEquals(checkout.total(),80)
+        checkout.scan("A")
+        assertEquals(checkout.total(),130)
+        checkout.scan("A")
+        assertEquals(checkout.total(),160)
+        checkout.scan("B")
+        assertEquals(checkout.total(),175)
+        checkout.scan("C")
+        assertEquals(checkout.total(),195)
+        checkout.scan("B")
+        assertEquals(checkout.total(),225)
+        checkout.scan("C")
+        assertEquals(checkout.total(),245)
+        checkout.scan("D")
+        assertEquals(checkout.total(),260)
+        checkout.scan("D")
+        assertEquals(checkout.total(),275)
+        checkout.scan("D")
+        assertEquals(checkout.total(),290)
+        checkout.scan("C")
+        assertEquals(checkout.total(),310)
+    }
 }
