@@ -20,3 +20,6 @@ package-lock.json
 
 exercises/kotlin/.gradle
 exercises/kotlin/build/
+
+vendor/
+.phpunit.*
