@@ -55,19 +55,19 @@ namespace McrDigital.Bootcamp1.Checkout.Tests
             Assert.Equal(expectedTotalScore, getTotalScore);
         }
 
-        //[Fact]
-        //public void WhenKnockingDifferentPinsInEachRoll_ReturnTotalScore()
-        //{
-        //    //arrange
-        //    var bowlingGame = new BowlingGame();
-        //    int[] rolls = { 5, 5, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-        //    expectedTotalScore = 12;
+        [Fact]
+        public void WhenKnockingDifferentPinsInEachRoll_ReturnTotalScore()
+        {
+            //arrange
+            var bowlingGame = new BowlingGame();
+            int[] rolls = { 5, 5, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+            expectedTotalScore = 12;
 
-        //    //act
-        //    var getTotalScore = bowlingGame.GetTotalScore(rolls);
+            //act
+            var getTotalScore = bowlingGame.GetTotalScore(rolls);
 
-        //    //assert
-        //    Assert.Equal(expectedTotalScore, getTotalScore);
-        //}
+            //assert
+            Assert.Equal(expectedTotalScore, getTotalScore);
+        }
     }
 }

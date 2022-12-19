@@ -18,6 +18,10 @@ namespace McrDigital.Bootcamp1.Checkout
             for (int frame = 0; frame < 20; frame+=2)
             {
                 frameScore[frame/2] = rolls[frame] + rolls[frame + 1];
+                if ((frame / 2) - 1 >= 0 && frameScore[(frame / 2) - 1] == 10)
+                {
+                    frameScore[frame / 2] += rolls[frame];
+                }
                 totalScore += frameScore[frame / 2];
             }
 
