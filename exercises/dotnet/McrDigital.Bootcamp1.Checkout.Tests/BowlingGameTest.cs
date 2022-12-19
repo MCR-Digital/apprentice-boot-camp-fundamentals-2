@@ -6,52 +6,53 @@ namespace McrDigital.Bootcamp1.Checkout.Tests
 {
     public class BowlingGameTests
     {
+        int expectedTotalScore = 0;
         [Fact]
-        public void WhenNotKnockingAnyRolls_ReturnsTotalScoreAsZero()
+        public void WhenKnockingNoPins_ReturnsTotalScore()
         {
             //arrange
             var bowlingGame = new BowlingGame();
 
             int[] rolls = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-            int totalScore = 0;
+            expectedTotalScore = 0;
 
             //act
-            bowlingGame.GetTotalScore(rolls);
+            var getTotalScore = bowlingGame.GetTotalScore(rolls);
 
             //assert
-            Assert.Equal(totalScore, bowlingGame.GetTotalScore(rolls));
+            Assert.Equal(expectedTotalScore, getTotalScore);
         }
 
         [Fact]
-        public void WhenKnockingOneRoll_ReturnsTotalScoreAsOne()
+        public void WhenKnockingOnePin_ReturnsTotalScore()
         {
             //arrange
             var bowlingGame = new BowlingGame();
 
             int[] rolls = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 };
-            int totalScore = 1;
+            expectedTotalScore = 1;
 
             //act
-            bowlingGame.GetTotalScore(rolls);
+            var getTotalScore = bowlingGame.GetTotalScore(rolls);
 
             //assert
-            Assert.Equal(totalScore, bowlingGame.GetTotalScore(rolls));
+            Assert.Equal(expectedTotalScore, getTotalScore);
         }
 
         [Fact]
-        public void WhenKnockingOneRollInEachGame_ReturnsTotalScoreAsTwenty()
+        public void WhenKnockingOnePinInEachRoll_ReturnsTotalScore()
         {
             //arrange
             var bowlingGame = new BowlingGame();
 
             int[] rolls = { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
-            int totalScore = 20;
+            expectedTotalScore = 20;
 
             //act
-            bowlingGame.GetTotalScore(rolls);
+            var getTotalScore = bowlingGame.GetTotalScore(rolls);
 
             //assert
-            Assert.Equal(totalScore, bowlingGame.GetTotalScore(rolls));
+            Assert.Equal(expectedTotalScore, getTotalScore);
         }
     }
 }
