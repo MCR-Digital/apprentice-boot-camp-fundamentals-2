@@ -8,7 +8,7 @@ namespace McrDigital.Bootcamp1.Checkout.Tests
     {
         int expectedTotalScore = 0;
         [Fact]
-        public void WhenKnockingNoPins_ReturnsTotalScore()
+        public void WhenKnockingNoPins_ReturnTotalScore()
         {
             //arrange
             var bowlingGame = new BowlingGame();
@@ -24,7 +24,7 @@ namespace McrDigital.Bootcamp1.Checkout.Tests
         }
 
         [Fact]
-        public void WhenKnockingOnePin_ReturnsTotalScore()
+        public void WhenKnockingOnePin_ReturnTotalScore()
         {
             //arrange
             var bowlingGame = new BowlingGame();
@@ -40,7 +40,7 @@ namespace McrDigital.Bootcamp1.Checkout.Tests
         }
 
         [Fact]
-        public void WhenKnockingOnePinInEachRoll_ReturnsTotalScore()
+        public void WhenKnockingOnePinInEachRoll_ReturnTotalScore()
         {
             //arrange
             var bowlingGame = new BowlingGame();
@@ -54,5 +54,20 @@ namespace McrDigital.Bootcamp1.Checkout.Tests
             //assert
             Assert.Equal(expectedTotalScore, getTotalScore);
         }
+
+        //[Fact]
+        //public void WhenKnockingDifferentPinsInEachRoll_ReturnTotalScore()
+        //{
+        //    //arrange
+        //    var bowlingGame = new BowlingGame();
+        //    int[] rolls = { 5, 5, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        //    expectedTotalScore = 12;
+
+        //    //act
+        //    var getTotalScore = bowlingGame.GetTotalScore(rolls);
+
+        //    //assert
+        //    Assert.Equal(expectedTotalScore, getTotalScore);
+        //}
     }
 }
