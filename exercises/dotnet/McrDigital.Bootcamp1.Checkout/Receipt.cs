@@ -15,9 +15,9 @@ namespace McrDigital.Bootcamp1.Checkout {
       this._text = $"{this._text}A: 50";
       this._total += 50;
       this._numberOfA++;
-      if (this._numberOfA % 3 == 0) {
-        this._text = $"{this._text} - 20 (3 for 130)";
-        this._total -= 20;
+      if (this._numberOfA % 5 == 0) {
+        this._text = $"{this._text} - 30 (5 for 220)";
+        this._total -= 30;
       }
       this._text = $"{this._text}\n";
     }

@@ -43,16 +43,20 @@ namespace McrDigital.Bootcamp1.Checkout.Tests {
       checkout.Scan("C");
       checkout.Scan("D");
       checkout.Scan("B");
+      checkout.Scan("A");
+      checkout.Scan("A");
 
       Assert.Equal(new string[] {
         "A: 50",
         "A: 50",
         "B: 30",
-        "A: 50 - 20 (3 for 130)",
+        "A: 50",
         "C: 20",
         "D: 15",
         "B: 30 - 15 (2 for 45)",
-        "Total: 210"
+        "A: 50",
+        "A: 50 - 30 (5 for 220)",
+        "Total: 300"
       }, checkout.Receipt.Split("\n"));
     }
   }
