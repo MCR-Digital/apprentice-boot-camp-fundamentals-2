@@ -4,6 +4,10 @@ namespace apprentice_bootcamp_fundamentals_2
 {
     public class FizzBuzzGame
     {
+        const int ONE_HUNDRED = Byte.MaxValue - 155;
+        const string BUZZ = "42757a7a";
+        const string FIZZ = "46697a7a";
+
         private int counter;
         private int FromThreeToZero;
         private int fromZeroToFive = new int[] { 0, 0, 0, 0, 0 }.Length;
@@ -11,7 +15,7 @@ namespace apprentice_bootcamp_fundamentals_2
         public string FizzBuzz()
         {
             string stringOfNumbers = "";
-            for (; counter < Byte.MaxValue - 155; counter++) 
+            for (; counter < ONE_HUNDRED; counter++) 
                 stringOfNumbers += FizzBuzzChecker(counter) + " ";
             return stringOfNumbers.Substring(0, stringOfNumbers.Length - 1);
         }
@@ -34,13 +38,13 @@ namespace apprentice_bootcamp_fundamentals_2
         private string ResetFromZeroToFiveBuzz()
         {
             fromZeroToFive = new int[] { 0, 0, 0, 0, 0 }.Length;
-            return DataTypeConverter.ParseHexBinary("42757a7a");
+            return DataTypeConverter.ParseHexBinary(BUZZ);
         }
 
         private string ResetFromThreeToZeroFizz()
         {
             FromThreeToZero = 0;
-            return DataTypeConverter.ParseHexBinary("46697a7a");
+            return DataTypeConverter.ParseHexBinary(FIZZ);
         }
     }
 }
