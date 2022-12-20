@@ -24,18 +24,20 @@ namespace McrDigital.Bootcamp1.Checkout.Tests {
     }
 
     [Fact]
-    public void ThreeA() {
+    public void FiveA() {
       var checkout = new Checkout();
 
       checkout.Scan("A");
       checkout.Scan("A");
       checkout.Scan("A");
+      checkout.Scan("A");
+      checkout.Scan("A");
 
-      Assert.Equal(150, checkout.Total);
+      Assert.Equal(220, checkout.Total);
     }
 
     [Fact]
-    public void SixA() {
+    public void TenA() {
       var checkout = new Checkout();
 
       checkout.Scan("A");
@@ -44,8 +46,12 @@ namespace McrDigital.Bootcamp1.Checkout.Tests {
       checkout.Scan("A");
       checkout.Scan("A");
       checkout.Scan("A");
+      checkout.Scan("A");
+      checkout.Scan("A");
+      checkout.Scan("A");
+      checkout.Scan("A");
 
-      Assert.Equal(270, checkout.Total);
+            Assert.Equal(440, checkout.Total);
     }
     [Fact]
     public void OneB() {
@@ -79,6 +85,19 @@ namespace McrDigital.Bootcamp1.Checkout.Tests {
     }
 
     [Fact]
+    public void FourC()
+    {
+        var checkout = new Checkout();
+
+        checkout.Scan("C");
+        checkout.Scan("C");
+        checkout.Scan("C");
+        checkout.Scan("C");
+
+        Assert.Equal(70, checkout.Total);
+    }
+
+        [Fact]
     public void Simple() {
       var checkout = new Checkout();
 
@@ -134,6 +153,9 @@ namespace McrDigital.Bootcamp1.Checkout.Tests {
       
       checkout.Scan("C");
       Assert.Equal(330, checkout.Total);
+
+      checkout.Scan("C");
+      Assert.Equal(340, checkout.Total);
     }
   }
 }

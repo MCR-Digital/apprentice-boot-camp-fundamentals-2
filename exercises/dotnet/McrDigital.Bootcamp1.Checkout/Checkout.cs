@@ -3,9 +3,11 @@ namespace McrDigital.Bootcamp1.Checkout {
     private int _total;
     private int _numberOfA;
     private int _numberOfB;
+    private int _numberOfC;
+
     private Receipt _receipt = new Receipt();
 
-    public string Receipt {
+        public string Receipt {
       get => this._receipt.Text;
     }
 
@@ -30,7 +32,12 @@ namespace McrDigital.Bootcamp1.Checkout {
         this._receipt.ScannedB();
       } else if ("C".Equals(sku)) {
         this._total += 20;
+        this._numberOfC++;
         this._receipt.ScannedC();
+        if (this._numberOfC % 4 == 0)
+        {
+            this._total -= 10;
+        }
       } else if ("D".Equals(sku)) {
         this._total += 15;
         this._receipt.ScannedD();

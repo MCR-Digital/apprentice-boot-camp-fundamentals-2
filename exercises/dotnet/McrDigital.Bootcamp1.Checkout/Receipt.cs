@@ -6,6 +6,7 @@ namespace McrDigital.Bootcamp1.Checkout {
     private int _total;
     private int _numberOfA;
     private int _numberOfB;
+    private int _numberOfC;
 
     public string Text {
       get => $"{this._text}Total: {this._total}";
@@ -34,8 +35,15 @@ namespace McrDigital.Bootcamp1.Checkout {
     }
 
     public void ScannedC() {
-      this._text = $"{this._text}C: 20\n";
+      this._text = $"{this._text}C: 20";
       this._total += 20;
+      this._numberOfC++;
+      if (this._numberOfC % 4 == 0)
+      {
+          this._text = $"{this._text} - 10 (4 for 70)";
+          this._total -= 10;
+      }
+      this._text = $"{this._text}\n";
     }
 
     public void ScannedD() {
