@@ -16,9 +16,20 @@ namespace apprentice_bootcamp_fundamentals_2
         public string FizzBuzz()
         {
             string stringOfNumbers = "";
-            for (; counter < ONE_HUNDRED; counter++) 
-                stringOfNumbers += FizzBuzzChecker(counter) + " ";
+            stringOfNumbers = PlayGameTo100(stringOfNumbers);
+            return RemovingEndSpace(stringOfNumbers);
+        }
+
+        private static string RemovingEndSpace(string stringOfNumbers)
+        {
             return stringOfNumbers.Substring(0, stringOfNumbers.Length - 1);
+        }
+
+        private string PlayGameTo100(string stringOfNumbers)
+        {
+            for (; counter < ONE_HUNDRED; counter++)
+                stringOfNumbers += FizzBuzzChecker(counter) + " ";
+            return stringOfNumbers;
         }
 
         private string FizzBuzzChecker(int counter)
@@ -30,9 +41,26 @@ namespace apprentice_bootcamp_fundamentals_2
             var isBuzz = fromZeroToFive == 0;
             var counterToString = (counter + 1).ToString();
 
-            string stringOfNumbers = isFizz || isBuzz ? "" : counterToString;
-            if (isFizz) stringOfNumbers += ResetFromThreeToZeroFizz();
+            string stringOfNumbers = GetEmptyStringOrNumber(isFizz, isBuzz, counterToString);
+            stringOfNumbers = ReturnFizz(isFizz, stringOfNumbers);
+            stringOfNumbers = ReturnBuzz(isBuzz, stringOfNumbers);
+            return stringOfNumbers;
+        }
+
+        private static string GetEmptyStringOrNumber(bool isFizz, bool isBuzz, string counterToString)
+        {
+            return isFizz || isBuzz ? "" : counterToString;
+        }
+
+        private string ReturnBuzz(bool isBuzz, string stringOfNumbers)
+        {
             if (isBuzz) stringOfNumbers += ResetFromZeroToFiveBuzz();
+            return stringOfNumbers;
+        }
+
+        private string ReturnFizz(bool isFizz, string stringOfNumbers)
+        {
+            if (isFizz) stringOfNumbers += ResetFromThreeToZeroFizz();
             return stringOfNumbers;
         }
 
