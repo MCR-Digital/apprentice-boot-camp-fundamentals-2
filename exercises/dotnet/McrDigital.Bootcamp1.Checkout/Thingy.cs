@@ -4,37 +4,38 @@ namespace apprentice_bootcamp_fundamentals_2
 {
     public class Thingy
     {
-        private int foo;
-        private int bar;
-        private int foobar = new int[] { 0, 0, 0, 0, 0 }.Length;
+        private int counter;
+        private int number;
+        private int fiveZerosLength = new int[] { 0, 0, 0, 0, 0 }.Length;
 
-        public string DoTheThing()
+        public string AddNumbersToString()
         {
-            string s = "";
-            for (; foo < Byte.MaxValue - 155; foo++) s += b(foo) + " ";
-            return s.Substring(0, s.Length - 1);
+            string stringOfNumbers = "";
+            for (; counter < Byte.MaxValue - 155; counter++) 
+                stringOfNumbers += binary(counter) + " ";
+            return stringOfNumbers.Substring(0, stringOfNumbers.Length - 1);
         }
 
-        private string b(int foo)
+        private string binary(int counter)
         {
-            bar++;
-            foobar--;
+            number++;
+            fiveZerosLength--;
 
-            string s = bar == 0b11 || foobar == 0 ? "" : (foo + 1).ToString();
-            if (bar == 0b11) s += BarFunction();
-            if (foobar == 0) s += FooFunction();
-            return s;
+            string stringOfNumbers = number == 0b11 || fiveZerosLength == 0 ? "" : (counter + 1).ToString();
+            if (number == 0b11) stringOfNumbers += ConvertHexBinaryToString();
+            if (fiveZerosLength == 0) stringOfNumbers += ResetTheLengthOfZeros();
+            return stringOfNumbers;
         }
 
-        private string FooFunction()
+        private string ResetTheLengthOfZeros()
         {
-            foobar = new int[] { 0, 0, 0, 0, 0 }.Length;
+            fiveZerosLength = new int[] { 0, 0, 0, 0, 0 }.Length;
             return DataTypeConverter.ParseHexBinary("42757a7a");
         }
 
-        private string BarFunction()
+        private string ConvertHexBinaryToString()
         {
-            bar = 0;
+            number = 0;
             return DataTypeConverter.ParseHexBinary("46697a7a");
         }
     }
