@@ -17,6 +17,10 @@ namespace McrDigital.Bootcamp1.Checkout
             this.Sku = sku;
         }
 
-        public Product()
+        public Product(int cost, string sku, int multiBuy_amount, int multiBuy_Discount) : this(cost, sku)
+        {
+            MultiBuy_amount = multiBuy_amount;
+            MultiBuy_Discount = multiBuy_Discount;
+        }
     }
 }
